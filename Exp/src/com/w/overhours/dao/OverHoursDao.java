@@ -23,5 +23,5 @@ public interface OverHoursDao {
 	 * @param Month
 	 * @return
 	 */
-	public List<OverHoursBean> findAll(String Month);
+	public List<OverHoursBean> findAll();
 }

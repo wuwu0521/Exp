@@ -12,13 +12,44 @@ package com.w.overhours.bean;
  */
 public class OverHoursBean {
 	//ÈÕÆÚ
-	private String date;
+	private String dateTime;
 
-	public String getDate() {
-		return date;
+	private String overTime;
+	
+	private String workContent;
+	
+	private String id;
+
+	public String getDateTime() {
+		return dateTime;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
 	}
+
+	public String getOverTime() {
+		return overTime;
+	}
+
+	public void setOverTime(String overTime) {
+		this.overTime = overTime;
+	}
+
+	public String getWorkContent() {
+		return workContent;
+	}
+
+	public void setWorkContent(String workContent) {
+		this.workContent = workContent;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 }

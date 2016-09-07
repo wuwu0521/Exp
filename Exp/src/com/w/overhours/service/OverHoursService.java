@@ -20,12 +20,12 @@ import com.w.overhours.dao.OverHoursDao;
  * @ÐÞ¸Ä±¸×¢£º
  * @version 2.0
  */
-@Service("ohService")
+@Service
 public class OverHoursService {
 	@Resource
 	private OverHoursDao ohDao;
 	
-	public List<OverHoursBean> findAll(String month){
-		return ohDao.findAll(month);
+	public List<OverHoursBean> findAll(){
+		return ohDao.findAll();
 	}
 }
