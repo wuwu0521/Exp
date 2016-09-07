@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css"
+	href="js/easyui/themes/black/easyui.css">
+<link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css">
+<link rel="stylesheet" href="css/overHours.css" />
+<script type="text/javascript" src="js/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/overHours.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#data_list").datagrid({
+			pagination : true,//是否分页
+			rownumbers : true,//显示行号
+			striped : true,//背景间隔
+			fitColumns : true,//固定長度
+			collapsed: true//默認收縮
+		});
+		//设置分页控件 
+		var p = $('#data_list').datagrid('getPager');
+		ResetPager(p);
+	});
+	/**
+	 * 重新设置分页
+	 * @param {Object} pager
+	 */
+	function ResetPager(pager) {
+		$(pager).pagination({
+			pageSize : 31,//每页显示的记录条数，默认为10 
+			pageList : [31],//可以设置每页记录条数的列表 
+			beforePageText : '第',//页数文本框前显示的汉字 
+			afterPageText : '页    共 {pages} 页',
+			displayMsg : '当前显示 {from} - {to} 条记录   共 {total} 条记录',//
+			onBeforeRefresh:function(){//刷新按鈕
+			    $(this).pagination('loading');
+			    $(this).pagination('loaded');
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div class="data_div">
+		<table class="easyui-datagrid" title="OVERTIME RECORD"
+			style="width:700px;height:250px" id="data_list"
+			data-options="singleSelect:true,collapsible:true,url:'findByMonth.do',method:'get'">
+			<thead>
+				<tr>
+					<th data-options="field:'id',width:80,align:'center'">Item ID</th>
+					<th data-options="field:'dateTime',width:200,align:'center'">Date</th>
+					<th data-options="field:'overTime',width:80,align:'center'">OverTime</th>
+					<th data-options="field:'workContent',width:350,align:'center'">CONTENT</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</body>
+</html>
