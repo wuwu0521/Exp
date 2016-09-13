@@ -40,25 +40,45 @@
 			}
 		});
 	}
+	 
+	 var openRecord=function(){
+		 
+	 }
 </script>
 </head>
 <body>
-	<div class="search_div">
-		<input class="easyui-datetime"/>
-	</div>
 	<div class="data_div">
-		<table class="easyui-datagrid" title="OVERTIME RECORD"
-			style="width:700px;height:250px" id="data_list"
-			data-options="singleSelect:true,collapsible:true,url:'findByMonth.do',method:'get'">
-			<thead>
-				<tr>
-					<th data-options="field:'id',width:80,align:'center'">Item ID</th>
-					<th data-options="field:'dateTime',width:200,align:'center'">Date</th>
-					<th data-options="field:'overTime',width:80,align:'center'">OverTime</th>
-					<th data-options="field:'workContent',width:350,align:'center'">CONTENT</th>
-				</tr>
-			</thead>
-		</table>
+		<div class="table_div">
+			<table class="easyui-datagrid" title="OVERTIME RECORD"
+				style="width:700px;height:250px" id="data_list"
+				data-options="singleSelect:true,collapsible:true,url:'findByMonth.do',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'id',width:80,align:'center'">Item ID</th>
+						<th data-options="field:'dateTime',width:200,align:'center'">Date</th>
+						<th data-options="field:'overTime',width:80,align:'center',editor:'numberbox'">OverTime</th>
+						<th data-options="field:'workContent',width:350,align:'center'">CONTENT</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="form_div">
+				<div style="margin:20px 0 10px 0;">
+		<a href="javascript：void(0);" class="easyui-linkbutton" onclick="javascript:$('#p').panel('open')">加班记录</a>
+		<a href="#" class="easyui-linkbutton" onclick="javascript:$('#p').panel('close')">Close</a>
+	</div>
+	<div id="p" class="easyui-panel" title="加班日期统计" style="width:700px;height:200px;padding:10px;">
+		<p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
+		<ul>
+			<li>easyui is a collection of user-interface plugin based on jQuery.</li>
+			<li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
+			<li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
+			<li>complete framework for HTML5 web page.</li>
+			<li>easyui save your time and scales while developing your products.</li>
+			<li>easyui is very easy but powerful.</li>
+		</ul>
+	</div>
+		</div>
 	</div>
 </body>
 </html>
